@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ar.unrn.tp.jpa.servicios.VentaServiceTest" time="4.736" tests="8" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Simon\IdeaProjects\TP5-BD\target\test-classes;C:\Users\Simon\IdeaProjects\TP5-BD\target\classes;C:\Users\Simon\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Simon\.m2\repository\org\hibernate\orm\hibernate-core\6.2.3.Final\hibernate-core-6.2.3.Final.jar;C:\Users\Simon\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Simon\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Simon\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Simon\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Simon\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\Simon\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Simon\.m2\repository\net\bytebuddy\byte-buddy\1.14.5\byte-buddy-1.14.5.jar;C:\Users\Simon\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar;C:\Users\Simon\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\Simon\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.3\jaxb-runtime-4.0.3.jar;C:\Users\Simon\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.3\jaxb-core-4.0.3.jar;C:\Users\Simon\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\Simon\.m2\repository\org\glassfish\jaxb\txw2\4.0.3\txw2-4.0.3.jar;C:\Users\Simon\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Simon\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Simon\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.2\spring-boot-starter-data-jpa-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.2\spring-boot-starter-aop-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-aop\6.0.11\spring-aop-6.0.11.jar;C:\Users\Simon\.m2\repository\org\aspectj\aspectjweaver\1.9.19\aspectjweaver-1.9.19.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.2\spring-boot-starter-jdbc-3.1.2.jar;C:\Users\Simon\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-jdbc\6.0.11\spring-jdbc-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\data\spring-data-jpa\3.1.2\spring-data-jpa-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\data\spring-data-commons\3.1.2\spring-data-commons-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-orm\6.0.11\spring-orm-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-context\6.0.11\spring-context-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-tx\6.0.11\spring-tx-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-beans\6.0.11\spring-beans-6.0.11.jar;C:\Users\Simon\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Simon\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-aspects\6.0.11\spring-aspects-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.2\spring-boot-starter-validation-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.2\spring-boot-starter-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot\3.1.2\spring-boot-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.2\spring-boot-autoconfigure-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.2\spring-boot-starter-logging-3.1.2.jar;C:\Users\Simon\.m2\repository\ch\qos\logback\logback-classic\1.4.8\logback-classic-1.4.8.jar;C:\Users\Simon\.m2\repository\ch\qos\logback\logback-core\1.4.8\logback-core-1.4.8.jar;C:\Users\Simon\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\Simon\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\Simon\.m2\repository\org\slf4j\jul-to-slf4j\2.0.7\jul-to-slf4j-2.0.7.jar;C:\Users\Simon\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\Simon\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.11\tomcat-embed-el-10.1.11.jar;C:\Users\Simon\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Simon\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.2\spring-boot-starter-web-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.2\spring-boot-starter-json-3.1.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.2\jackson-module-parameter-names-2.15.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.2\spring-boot-starter-tomcat-3.1.2.jar;C:\Users\Simon\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.11\tomcat-embed-core-10.1.11.jar;C:\Users\Simon\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.11\tomcat-embed-websocket-10.1.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-web\6.0.11\spring-web-6.0.11.jar;C:\Users\Simon\.m2\repository\io\micrometer\micrometer-observation\1.11.2\micrometer-observation-1.11.2.jar;C:\Users\Simon\.m2\repository\io\micrometer\micrometer-commons\1.11.2\micrometer-commons-1.11.2.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-webmvc\6.0.11\spring-webmvc-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-expression\6.0.11\spring-expression-6.0.11.jar;C:\Users\Simon\.m2\repository\org\postgresql\postgresql\42.6.0\postgresql-42.6.0.jar;C:\Users\Simon\.m2\repository\org\checkerframework\checker-qual\3.31.0\checker-qual-3.31.0.jar;C:\Users\Simon\.m2\repository\org\projectlombok\lombok\1.18.28\lombok-1.18.28.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.2\spring-boot-starter-test-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-test\3.1.2\spring-boot-test-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.2\spring-boot-test-autoconfigure-3.1.2.jar;C:\Users\Simon\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Simon\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\Simon\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\Simon\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Simon\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Simon\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Simon\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Simon\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Simon\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\Simon\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.5\byte-buddy-agent-1.14.5.jar;C:\Users\Simon\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Simon\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\Simon\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Simon\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-core\6.0.11\spring-core-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-jcl\6.0.11\spring-jcl-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-test\6.0.11\spring-test-6.0.11.jar;C:\Users\Simon\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\Simon\.m2\repository\org\apache\derby\derby\10.16.1.1\derby-10.16.1.1.jar;C:\Users\Simon\.m2\repository\org\apache\derby\derbyshared\10.16.1.1\derbyshared-10.16.1.1.jar;C:\Users\Simon\.m2\repository\org\apache\derby\derbytools\10.16.1.1\derbytools-10.16.1.1.jar;C:\Users\Simon\.m2\repository\org\apache\derby\derbyclient\10.16.1.1\derbyclient-10.16.1.1.jar;C:\Users\Simon\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\Simon\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\Simon\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Simon\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Simon\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Simon\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Simon\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.1.0\springdoc-openapi-starter-webmvc-ui-2.1.0.jar;C:\Users\Simon\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.1.0\springdoc-openapi-starter-webmvc-api-2.1.0.jar;C:\Users\Simon\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.1.0\springdoc-openapi-starter-common-2.1.0.jar;C:\Users\Simon\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.9\swagger-core-jakarta-2.2.9.jar;C:\Users\Simon\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Simon\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.9\swagger-annotations-jakarta-2.2.9.jar;C:\Users\Simon\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.9\swagger-models-jakarta-2.2.9.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.2\jackson-dataformat-yaml-2.15.2.jar;C:\Users\Simon\.m2\repository\org\webjars\swagger-ui\4.18.2\swagger-ui-4.18.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Buenos_Aires"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="AR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
+    <property name="sun.java.command" value="C:\Users\Simon\AppData\Local\Temp\surefire2499042204308753862\surefirebooter-20231001141228087_3.jar C:\Users\Simon\AppData\Local\Temp\surefire2499042204308753862 2023-10-01T14-12-27_590-jvmRun1 surefire-20231001141228087_1tmp surefire_0-20231001141228087_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Simon\IdeaProjects\TP5-BD\target\test-classes;C:\Users\Simon\IdeaProjects\TP5-BD\target\classes;C:\Users\Simon\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Simon\.m2\repository\org\hibernate\orm\hibernate-core\6.2.3.Final\hibernate-core-6.2.3.Final.jar;C:\Users\Simon\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Simon\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Simon\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Simon\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Simon\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\Simon\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Simon\.m2\repository\net\bytebuddy\byte-buddy\1.14.5\byte-buddy-1.14.5.jar;C:\Users\Simon\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar;C:\Users\Simon\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\Simon\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.3\jaxb-runtime-4.0.3.jar;C:\Users\Simon\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.3\jaxb-core-4.0.3.jar;C:\Users\Simon\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\Simon\.m2\repository\org\glassfish\jaxb\txw2\4.0.3\txw2-4.0.3.jar;C:\Users\Simon\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Simon\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Simon\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.2\spring-boot-starter-data-jpa-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.2\spring-boot-starter-aop-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-aop\6.0.11\spring-aop-6.0.11.jar;C:\Users\Simon\.m2\repository\org\aspectj\aspectjweaver\1.9.19\aspectjweaver-1.9.19.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.2\spring-boot-starter-jdbc-3.1.2.jar;C:\Users\Simon\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-jdbc\6.0.11\spring-jdbc-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\data\spring-data-jpa\3.1.2\spring-data-jpa-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\data\spring-data-commons\3.1.2\spring-data-commons-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-orm\6.0.11\spring-orm-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-context\6.0.11\spring-context-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-tx\6.0.11\spring-tx-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-beans\6.0.11\spring-beans-6.0.11.jar;C:\Users\Simon\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Simon\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-aspects\6.0.11\spring-aspects-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.2\spring-boot-starter-validation-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.2\spring-boot-starter-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot\3.1.2\spring-boot-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.2\spring-boot-autoconfigure-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.2\spring-boot-starter-logging-3.1.2.jar;C:\Users\Simon\.m2\repository\ch\qos\logback\logback-classic\1.4.8\logback-classic-1.4.8.jar;C:\Users\Simon\.m2\repository\ch\qos\logback\logback-core\1.4.8\logback-core-1.4.8.jar;C:\Users\Simon\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\Simon\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\Simon\.m2\repository\org\slf4j\jul-to-slf4j\2.0.7\jul-to-slf4j-2.0.7.jar;C:\Users\Simon\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\Simon\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.11\tomcat-embed-el-10.1.11.jar;C:\Users\Simon\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Simon\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.2\spring-boot-starter-web-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.2\spring-boot-starter-json-3.1.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.2\jackson-module-parameter-names-2.15.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.2\spring-boot-starter-tomcat-3.1.2.jar;C:\Users\Simon\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.11\tomcat-embed-core-10.1.11.jar;C:\Users\Simon\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.11\tomcat-embed-websocket-10.1.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-web\6.0.11\spring-web-6.0.11.jar;C:\Users\Simon\.m2\repository\io\micrometer\micrometer-observation\1.11.2\micrometer-observation-1.11.2.jar;C:\Users\Simon\.m2\repository\io\micrometer\micrometer-commons\1.11.2\micrometer-commons-1.11.2.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-webmvc\6.0.11\spring-webmvc-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-expression\6.0.11\spring-expression-6.0.11.jar;C:\Users\Simon\.m2\repository\org\postgresql\postgresql\42.6.0\postgresql-42.6.0.jar;C:\Users\Simon\.m2\repository\org\checkerframework\checker-qual\3.31.0\checker-qual-3.31.0.jar;C:\Users\Simon\.m2\repository\org\projectlombok\lombok\1.18.28\lombok-1.18.28.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.2\spring-boot-starter-test-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-test\3.1.2\spring-boot-test-3.1.2.jar;C:\Users\Simon\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.2\spring-boot-test-autoconfigure-3.1.2.jar;C:\Users\Simon\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Simon\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\Simon\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\Simon\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Simon\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Simon\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Simon\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Simon\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Simon\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\Simon\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.5\byte-buddy-agent-1.14.5.jar;C:\Users\Simon\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Simon\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\Simon\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Simon\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-core\6.0.11\spring-core-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-jcl\6.0.11\spring-jcl-6.0.11.jar;C:\Users\Simon\.m2\repository\org\springframework\spring-test\6.0.11\spring-test-6.0.11.jar;C:\Users\Simon\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\Simon\.m2\repository\org\apache\derby\derby\10.16.1.1\derby-10.16.1.1.jar;C:\Users\Simon\.m2\repository\org\apache\derby\derbyshared\10.16.1.1\derbyshared-10.16.1.1.jar;C:\Users\Simon\.m2\repository\org\apache\derby\derbytools\10.16.1.1\derbytools-10.16.1.1.jar;C:\Users\Simon\.m2\repository\org\apache\derby\derbyclient\10.16.1.1\derbyclient-10.16.1.1.jar;C:\Users\Simon\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\Simon\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\Simon\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Simon\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Simon\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Simon\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Simon\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.1.0\springdoc-openapi-starter-webmvc-ui-2.1.0.jar;C:\Users\Simon\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.1.0\springdoc-openapi-starter-webmvc-api-2.1.0.jar;C:\Users\Simon\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.1.0\springdoc-openapi-starter-common-2.1.0.jar;C:\Users\Simon\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.9\swagger-core-jakarta-2.2.9.jar;C:\Users\Simon\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Simon\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.9\swagger-annotations-jakarta-2.2.9.jar;C:\Users\Simon\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.9\swagger-models-jakarta-2.2.9.jar;C:\Users\Simon\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.2\jackson-dataformat-yaml-2.15.2.jar;C:\Users\Simon\.m2\repository\org\webjars\swagger-ui\4.18.2\swagger-ui-4.18.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Simon"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Simon\IdeaProjects\TP5-BD"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Simon\AppData\Local\Temp\surefire2499042204308753862\surefirebooter-20231001141228087_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.8+9-LTS-211"/>
+    <property name="user.name" value="Simon"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Simon\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Simon\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.8"/>
+    <property name="user.dir" value="C:\Users\Simon\IdeaProjects\TP5-BD"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Java\jdk-11\bin;C:\Program Files\apache-maven-3.9.1\bin;C:\wamp64\bin\php\php7.4.33;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Kubernetes\Minikube;C:\minikube;C:\Users\tools;C:\Program Files\Java\jdk-17\bin;C:\Users\Simon\AppData\Local\Microsoft\WindowsApps;C:\Users\Simon\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Simon\AppData\Roaming\npm;C:\Users\Simon\AppData\Roaming\Composer\vendor\bin;C:\Users\tools;;C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.4\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.8+9-LTS-211"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="Should_BeTrue_When_ASaleIsMade" classname="ar.unrn.tp.jpa.servicios.VentaServiceTest" time="1.133">
+    <system-out><![CDATA[14:12:49.527 [main] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: jpa-derby-embedded]
+14:12:49.534 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+14:12:49.534 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+14:12:49.535 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+14:12:49.535 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+14:12:49.689 [main] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+14:12:49.690 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+14:12:49.690 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001012: Connecting with JDBC URL [jdbc:derby:memory:userauth;create=true]
+14:12:49.691 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001001: Connection properties: {password=****, user=app}
+14:12:49.691 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001003: Autocommit mode: false
+14:12:49.691 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001115: Connection pool size: 20 (min=1)
+14:12:49.752 [main] INFO org.hibernate.bytecode.internal.BytecodeProviderInitiator -- HHH000021: Bytecode provider name : bytebuddy
+14:12:49.910 [main] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: alter table Producto drop constraint FK1c1lfcsftxf2tsvnljv4hh9or
+14:12:49.910 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@222674b5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table producto_vendido drop constraint FK57pwr6kpagunintlgs3foe07h
+Hibernate: alter table producto_vendido drop constraint FK19ifg5dswmjghfh6yj7sycinm
+Hibernate: alter table Promocion drop constraint FK3acoavp2lmq4r6i474na3lga8
+Hibernate: alter table Tarjeta drop constraint FKrehkv3i3agm32o92t5ekpdbni
+Hibernate: alter table Venta drop constraint FKbv0rwi1bkq5qsqv2qyy52124i
+Hibernate: drop table Categoria
+Hibernate: drop table Cliente
+Hibernate: drop table next_number
+Hibernate: drop table Producto
+Hibernate: drop table producto_vendido
+Hibernate: drop table Promocion
+Hibernate: drop table Tarjeta
+Hibernate: drop table Venta
+Hibernate: drop sequence Categoria_SEQ restrict
+Hibernate: drop sequence Cliente_SEQ restrict
+Hibernate: drop sequence next_number_SEQ restrict
+Hibernate: drop sequence Producto_SEQ restrict
+Hibernate: drop sequence producto_vendido_SEQ restrict
+Hibernate: drop sequence Promocion_SEQ restrict
+Hibernate: drop sequence Tarjeta_SEQ restrict
+Hibernate: drop sequence Venta_SEQ restrict
+Hibernate: create sequence Categoria_SEQ start with 1 increment by 50
+14:12:49.962 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@351cc4b5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: create sequence Cliente_SEQ start with 1 increment by 50
+Hibernate: create sequence next_number_SEQ start with 1 increment by 50
+Hibernate: create sequence Producto_SEQ start with 1 increment by 50
+Hibernate: create sequence producto_vendido_SEQ start with 1 increment by 50
+Hibernate: create sequence Promocion_SEQ start with 1 increment by 50
+Hibernate: create sequence Tarjeta_SEQ start with 1 increment by 50
+Hibernate: create sequence Venta_SEQ start with 1 increment by 50
+Hibernate: create table Categoria (id bigint not null, tipo varchar(255), primary key (id))
+Hibernate: create table Cliente (id bigint not null, apellido varchar(255), dni varchar(255) unique, email varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table next_number (actual integer not null, anio integer unique, id bigint not null, primary key (id))
+Hibernate: create table Producto (precio float(52) not null, categoria_id bigint, id bigint not null, version bigint, codigo varchar(255) unique, descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table producto_vendido (precio float(52) not null, categoria_id bigint, id bigint not null, id_venta bigint, codigo varchar(255), descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table Promocion (descuento float(52) not null, fecha_fin date, fecha_inicio date, id bigint not null, tarjeta_id bigint, tipo_promocion varchar(31) not null, nombre varchar(255), primary key (id))
+Hibernate: create table Tarjeta (activa boolean not null, fondos_disponibles float(52), id bigint not null, id_cliente bigint, nombre varchar(255), numero_tarjeta varchar(255), primary key (id))
+Hibernate: create table Venta (fecha date, monto_total float(52), cliente_id bigint, id bigint not null, numero_unico varchar(255) unique, primary key (id))
+Hibernate: alter table Producto add constraint FK1c1lfcsftxf2tsvnljv4hh9or foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK57pwr6kpagunintlgs3foe07h foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK19ifg5dswmjghfh6yj7sycinm foreign key (id_venta) references Venta
+Hibernate: alter table Promocion add constraint FK3acoavp2lmq4r6i474na3lga8 foreign key (tarjeta_id) references Tarjeta
+Hibernate: alter table Tarjeta add constraint FKrehkv3i3agm32o92t5ekpdbni foreign key (id_cliente) references Cliente
+Hibernate: alter table Venta add constraint FKbv0rwi1bkq5qsqv2qyy52124i foreign key (cliente_id) references Cliente
+Hibernate: values next value for Categoria_SEQ
+Hibernate: insert into Categoria (tipo,id) values (?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre from Cliente c1_0 where c1_0.dni=?
+Hibernate: values next value for Cliente_SEQ
+Hibernate: insert into Cliente (apellido,dni,email,nombre,id) values (?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: values next value for Tarjeta_SEQ
+Hibernate: insert into Tarjeta (activa,fondos_disponibles,nombre,numero_tarjeta,id) values (?,?,?,?,?)
+Hibernate: update Tarjeta set id_cliente=? where id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.nombre=?
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,tarjeta_id,tipo_promocion,id) values (?,?,?,?,'PC',?)
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,nombre,tipo_promocion,id) values (?,?,?,?,'PP',?)
+Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.codigo,p1_0.descripcion,p1_0.nombre,p1_0.precio,p1_0.version from Producto p1_0
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.codigo,p1_0.descripcion,p1_0.nombre,p1_0.precio,p1_0.version from Producto p1_0 where p1_0.id in (?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.descuento,p1_0.fecha_fin,p1_0.fecha_inicio,p1_0.nombre from Promocion p1_0 where ? between p1_0.fecha_inicio and p1_0.fecha_fin and p1_0.tipo_promocion='PP'
+Hibernate: select p1_0.id,p1_0.descuento,p1_0.fecha_fin,p1_0.fecha_inicio,p1_0.tarjeta_id from Promocion p1_0 where ? between p1_0.fecha_inicio and p1_0.fecha_fin and p1_0.tipo_promocion='PC'
+Hibernate: select n1_0.id,n1_0.actual,n1_0.anio from next_number n1_0 where n1_0.anio=? for update with rs
+Hibernate: values next value for next_number_SEQ
+Hibernate: values next value for Venta_SEQ
+Hibernate: values next value for producto_vendido_SEQ
+Hibernate: values next value for producto_vendido_SEQ
+Hibernate: insert into next_number (actual,anio,id) values (?,?,?)
+Hibernate: insert into Venta (cliente_id,fecha,monto_total,numero_unico,id) values (?,?,?,?,?)
+Hibernate: insert into producto_vendido (categoria_id,codigo,descripcion,nombre,precio,id) values (?,?,?,?,?,?)
+Hibernate: insert into producto_vendido (categoria_id,codigo,descripcion,nombre,precio,id) values (?,?,?,?,?,?)
+Hibernate: update Tarjeta set activa=?,fondos_disponibles=?,nombre=?,numero_tarjeta=? where id=?
+Hibernate: update producto_vendido set id_venta=? where id=?
+Hibernate: update producto_vendido set id_venta=? where id=?
+Hibernate: select v1_0.id,c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta,v1_0.fecha,v1_0.monto_total,v1_0.numero_unico from Venta v1_0 left join Cliente c1_0 on c1_0.id=v1_0.cliente_id left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where v1_0.id=?
+14:12:50.637 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001008: Cleaning up connection pool [jdbc:derby:memory:userauth;create=true]
+]]></system-out>
+  </testcase>
+  <testcase name="Should_ThrowRuntimeException_When_ASaleIsMadeWithoutAValidClient" classname="ar.unrn.tp.jpa.servicios.VentaServiceTest" time="0.57">
+    <system-out><![CDATA[14:12:50.678 [main] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: jpa-derby-embedded]
+14:12:50.680 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+14:12:50.688 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+14:12:50.690 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+14:12:50.690 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+14:12:50.776 [main] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+14:12:50.777 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+14:12:50.777 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001012: Connecting with JDBC URL [jdbc:derby:memory:userauth;create=true]
+14:12:50.777 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001001: Connection properties: {password=****, user=app}
+14:12:50.777 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001003: Autocommit mode: false
+14:12:50.777 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001115: Connection pool size: 20 (min=1)
+14:12:50.839 [main] INFO org.hibernate.bytecode.internal.BytecodeProviderInitiator -- HHH000021: Bytecode provider name : bytebuddy
+14:12:50.998 [main] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: alter table Producto drop constraint FK1c1lfcsftxf2tsvnljv4hh9or
+14:12:50.999 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@662d42e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table producto_vendido drop constraint FK57pwr6kpagunintlgs3foe07h
+Hibernate: alter table producto_vendido drop constraint FK19ifg5dswmjghfh6yj7sycinm
+Hibernate: alter table Promocion drop constraint FK3acoavp2lmq4r6i474na3lga8
+Hibernate: alter table Tarjeta drop constraint FKrehkv3i3agm32o92t5ekpdbni
+Hibernate: alter table Venta drop constraint FKbv0rwi1bkq5qsqv2qyy52124i
+Hibernate: drop table Categoria
+Hibernate: drop table Cliente
+Hibernate: drop table next_number
+Hibernate: drop table Producto
+Hibernate: drop table producto_vendido
+Hibernate: drop table Promocion
+Hibernate: drop table Tarjeta
+Hibernate: drop table Venta
+Hibernate: drop sequence Categoria_SEQ restrict
+Hibernate: drop sequence Cliente_SEQ restrict
+Hibernate: drop sequence next_number_SEQ restrict
+Hibernate: drop sequence Producto_SEQ restrict
+Hibernate: drop sequence producto_vendido_SEQ restrict
+Hibernate: drop sequence Promocion_SEQ restrict
+Hibernate: drop sequence Tarjeta_SEQ restrict
+Hibernate: drop sequence Venta_SEQ restrict
+Hibernate: create sequence Categoria_SEQ start with 1 increment by 50
+14:12:51.054 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@15168d6f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: create sequence Cliente_SEQ start with 1 increment by 50
+Hibernate: create sequence next_number_SEQ start with 1 increment by 50
+Hibernate: create sequence Producto_SEQ start with 1 increment by 50
+Hibernate: create sequence producto_vendido_SEQ start with 1 increment by 50
+Hibernate: create sequence Promocion_SEQ start with 1 increment by 50
+Hibernate: create sequence Tarjeta_SEQ start with 1 increment by 50
+Hibernate: create sequence Venta_SEQ start with 1 increment by 50
+Hibernate: create table Categoria (id bigint not null, tipo varchar(255), primary key (id))
+Hibernate: create table Cliente (id bigint not null, apellido varchar(255), dni varchar(255) unique, email varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table next_number (actual integer not null, anio integer unique, id bigint not null, primary key (id))
+Hibernate: create table Producto (precio float(52) not null, categoria_id bigint, id bigint not null, version bigint, codigo varchar(255) unique, descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table producto_vendido (precio float(52) not null, categoria_id bigint, id bigint not null, id_venta bigint, codigo varchar(255), descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table Promocion (descuento float(52) not null, fecha_fin date, fecha_inicio date, id bigint not null, tarjeta_id bigint, tipo_promocion varchar(31) not null, nombre varchar(255), primary key (id))
+Hibernate: create table Tarjeta (activa boolean not null, fondos_disponibles float(52), id bigint not null, id_cliente bigint, nombre varchar(255), numero_tarjeta varchar(255), primary key (id))
+Hibernate: create table Venta (fecha date, monto_total float(52), cliente_id bigint, id bigint not null, numero_unico varchar(255) unique, primary key (id))
+Hibernate: alter table Producto add constraint FK1c1lfcsftxf2tsvnljv4hh9or foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK57pwr6kpagunintlgs3foe07h foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK19ifg5dswmjghfh6yj7sycinm foreign key (id_venta) references Venta
+Hibernate: alter table Promocion add constraint FK3acoavp2lmq4r6i474na3lga8 foreign key (tarjeta_id) references Tarjeta
+Hibernate: alter table Tarjeta add constraint FKrehkv3i3agm32o92t5ekpdbni foreign key (id_cliente) references Cliente
+Hibernate: alter table Venta add constraint FKbv0rwi1bkq5qsqv2qyy52124i foreign key (cliente_id) references Cliente
+Hibernate: values next value for Categoria_SEQ
+Hibernate: insert into Categoria (tipo,id) values (?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre from Cliente c1_0 where c1_0.dni=?
+Hibernate: values next value for Cliente_SEQ
+Hibernate: insert into Cliente (apellido,dni,email,nombre,id) values (?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: values next value for Tarjeta_SEQ
+Hibernate: insert into Tarjeta (activa,fondos_disponibles,nombre,numero_tarjeta,id) values (?,?,?,?,?)
+Hibernate: update Tarjeta set id_cliente=? where id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.nombre=?
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,tarjeta_id,tipo_promocion,id) values (?,?,?,?,'PC',?)
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,nombre,tipo_promocion,id) values (?,?,?,?,'PP',?)
+Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.codigo,p1_0.descripcion,p1_0.nombre,p1_0.precio,p1_0.version from Producto p1_0
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+14:12:51.209 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001008: Cleaning up connection pool [jdbc:derby:memory:userauth;create=true]
+]]></system-out>
+  </testcase>
+  <testcase name="Should_ThrowRuntimeException_When_ASaleIsMadeWithoutAProductList" classname="ar.unrn.tp.jpa.servicios.VentaServiceTest" time="0.737">
+    <system-out><![CDATA[14:12:51.225 [main] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: jpa-derby-embedded]
+14:12:51.228 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+14:12:51.229 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+14:12:51.229 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+14:12:51.229 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+14:12:51.550 [main] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+14:12:51.550 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+14:12:51.550 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001012: Connecting with JDBC URL [jdbc:derby:memory:userauth;create=true]
+14:12:51.550 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001001: Connection properties: {password=****, user=app}
+14:12:51.550 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001003: Autocommit mode: false
+14:12:51.550 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001115: Connection pool size: 20 (min=1)
+14:12:51.576 [main] INFO org.hibernate.bytecode.internal.BytecodeProviderInitiator -- HHH000021: Bytecode provider name : bytebuddy
+14:12:51.692 [main] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: alter table Producto drop constraint FK1c1lfcsftxf2tsvnljv4hh9or
+14:12:51.692 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@491a40f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table producto_vendido drop constraint FK57pwr6kpagunintlgs3foe07h
+Hibernate: alter table producto_vendido drop constraint FK19ifg5dswmjghfh6yj7sycinm
+Hibernate: alter table Promocion drop constraint FK3acoavp2lmq4r6i474na3lga8
+Hibernate: alter table Tarjeta drop constraint FKrehkv3i3agm32o92t5ekpdbni
+Hibernate: alter table Venta drop constraint FKbv0rwi1bkq5qsqv2qyy52124i
+Hibernate: drop table Categoria
+Hibernate: drop table Cliente
+Hibernate: drop table next_number
+Hibernate: drop table Producto
+Hibernate: drop table producto_vendido
+Hibernate: drop table Promocion
+Hibernate: drop table Tarjeta
+Hibernate: drop table Venta
+Hibernate: drop sequence Categoria_SEQ restrict
+Hibernate: drop sequence Cliente_SEQ restrict
+Hibernate: drop sequence next_number_SEQ restrict
+Hibernate: drop sequence Producto_SEQ restrict
+Hibernate: drop sequence producto_vendido_SEQ restrict
+Hibernate: drop sequence Promocion_SEQ restrict
+Hibernate: drop sequence Tarjeta_SEQ restrict
+Hibernate: drop sequence Venta_SEQ restrict
+Hibernate: create sequence Categoria_SEQ start with 1 increment by 50
+14:12:51.737 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@20bc2c00] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: create sequence Cliente_SEQ start with 1 increment by 50
+Hibernate: create sequence next_number_SEQ start with 1 increment by 50
+Hibernate: create sequence Producto_SEQ start with 1 increment by 50
+Hibernate: create sequence producto_vendido_SEQ start with 1 increment by 50
+Hibernate: create sequence Promocion_SEQ start with 1 increment by 50
+Hibernate: create sequence Tarjeta_SEQ start with 1 increment by 50
+Hibernate: create sequence Venta_SEQ start with 1 increment by 50
+Hibernate: create table Categoria (id bigint not null, tipo varchar(255), primary key (id))
+Hibernate: create table Cliente (id bigint not null, apellido varchar(255), dni varchar(255) unique, email varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table next_number (actual integer not null, anio integer unique, id bigint not null, primary key (id))
+Hibernate: create table Producto (precio float(52) not null, categoria_id bigint, id bigint not null, version bigint, codigo varchar(255) unique, descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table producto_vendido (precio float(52) not null, categoria_id bigint, id bigint not null, id_venta bigint, codigo varchar(255), descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table Promocion (descuento float(52) not null, fecha_fin date, fecha_inicio date, id bigint not null, tarjeta_id bigint, tipo_promocion varchar(31) not null, nombre varchar(255), primary key (id))
+Hibernate: create table Tarjeta (activa boolean not null, fondos_disponibles float(52), id bigint not null, id_cliente bigint, nombre varchar(255), numero_tarjeta varchar(255), primary key (id))
+Hibernate: create table Venta (fecha date, monto_total float(52), cliente_id bigint, id bigint not null, numero_unico varchar(255) unique, primary key (id))
+Hibernate: alter table Producto add constraint FK1c1lfcsftxf2tsvnljv4hh9or foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK57pwr6kpagunintlgs3foe07h foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK19ifg5dswmjghfh6yj7sycinm foreign key (id_venta) references Venta
+Hibernate: alter table Promocion add constraint FK3acoavp2lmq4r6i474na3lga8 foreign key (tarjeta_id) references Tarjeta
+Hibernate: alter table Tarjeta add constraint FKrehkv3i3agm32o92t5ekpdbni foreign key (id_cliente) references Cliente
+Hibernate: alter table Venta add constraint FKbv0rwi1bkq5qsqv2qyy52124i foreign key (cliente_id) references Cliente
+Hibernate: values next value for Categoria_SEQ
+Hibernate: insert into Categoria (tipo,id) values (?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre from Cliente c1_0 where c1_0.dni=?
+Hibernate: values next value for Cliente_SEQ
+Hibernate: insert into Cliente (apellido,dni,email,nombre,id) values (?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: values next value for Tarjeta_SEQ
+Hibernate: insert into Tarjeta (activa,fondos_disponibles,nombre,numero_tarjeta,id) values (?,?,?,?,?)
+Hibernate: update Tarjeta set id_cliente=? where id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.nombre=?
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,tarjeta_id,tipo_promocion,id) values (?,?,?,?,'PC',?)
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,nombre,tipo_promocion,id) values (?,?,?,?,'PP',?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+14:12:51.947 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001008: Cleaning up connection pool [jdbc:derby:memory:userauth;create=true]
+]]></system-out>
+  </testcase>
+  <testcase name="Should_BeTrue_When_TryCalculateAmount" classname="ar.unrn.tp.jpa.servicios.VentaServiceTest" time="0.553">
+    <system-out><![CDATA[14:12:51.955 [main] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: jpa-derby-embedded]
+14:12:51.959 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+14:12:51.959 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+14:12:51.959 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+14:12:51.959 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+14:12:52.012 [main] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+14:12:52.013 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+14:12:52.013 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001012: Connecting with JDBC URL [jdbc:derby:memory:userauth;create=true]
+14:12:52.013 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001001: Connection properties: {password=****, user=app}
+14:12:52.013 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001003: Autocommit mode: false
+14:12:52.013 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001115: Connection pool size: 20 (min=1)
+14:12:52.055 [main] INFO org.hibernate.bytecode.internal.BytecodeProviderInitiator -- HHH000021: Bytecode provider name : bytebuddy
+14:12:52.173 [main] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: alter table Producto drop constraint FK1c1lfcsftxf2tsvnljv4hh9or
+14:12:52.173 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@17b1c453] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table producto_vendido drop constraint FK57pwr6kpagunintlgs3foe07h
+Hibernate: alter table producto_vendido drop constraint FK19ifg5dswmjghfh6yj7sycinm
+Hibernate: alter table Promocion drop constraint FK3acoavp2lmq4r6i474na3lga8
+Hibernate: alter table Tarjeta drop constraint FKrehkv3i3agm32o92t5ekpdbni
+Hibernate: alter table Venta drop constraint FKbv0rwi1bkq5qsqv2qyy52124i
+Hibernate: drop table Categoria
+Hibernate: drop table Cliente
+Hibernate: drop table next_number
+Hibernate: drop table Producto
+Hibernate: drop table producto_vendido
+Hibernate: drop table Promocion
+Hibernate: drop table Tarjeta
+Hibernate: drop table Venta
+Hibernate: drop sequence Categoria_SEQ restrict
+Hibernate: drop sequence Cliente_SEQ restrict
+Hibernate: drop sequence next_number_SEQ restrict
+Hibernate: drop sequence Producto_SEQ restrict
+Hibernate: drop sequence producto_vendido_SEQ restrict
+Hibernate: drop sequence Promocion_SEQ restrict
+Hibernate: drop sequence Tarjeta_SEQ restrict
+Hibernate: drop sequence Venta_SEQ restrict
+Hibernate: create sequence Categoria_SEQ start with 1 increment by 50
+14:12:52.289 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@761f241f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: create sequence Cliente_SEQ start with 1 increment by 50
+Hibernate: create sequence next_number_SEQ start with 1 increment by 50
+Hibernate: create sequence Producto_SEQ start with 1 increment by 50
+Hibernate: create sequence producto_vendido_SEQ start with 1 increment by 50
+Hibernate: create sequence Promocion_SEQ start with 1 increment by 50
+Hibernate: create sequence Tarjeta_SEQ start with 1 increment by 50
+Hibernate: create sequence Venta_SEQ start with 1 increment by 50
+Hibernate: create table Categoria (id bigint not null, tipo varchar(255), primary key (id))
+Hibernate: create table Cliente (id bigint not null, apellido varchar(255), dni varchar(255) unique, email varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table next_number (actual integer not null, anio integer unique, id bigint not null, primary key (id))
+Hibernate: create table Producto (precio float(52) not null, categoria_id bigint, id bigint not null, version bigint, codigo varchar(255) unique, descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table producto_vendido (precio float(52) not null, categoria_id bigint, id bigint not null, id_venta bigint, codigo varchar(255), descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table Promocion (descuento float(52) not null, fecha_fin date, fecha_inicio date, id bigint not null, tarjeta_id bigint, tipo_promocion varchar(31) not null, nombre varchar(255), primary key (id))
+Hibernate: create table Tarjeta (activa boolean not null, fondos_disponibles float(52), id bigint not null, id_cliente bigint, nombre varchar(255), numero_tarjeta varchar(255), primary key (id))
+Hibernate: create table Venta (fecha date, monto_total float(52), cliente_id bigint, id bigint not null, numero_unico varchar(255) unique, primary key (id))
+Hibernate: alter table Producto add constraint FK1c1lfcsftxf2tsvnljv4hh9or foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK57pwr6kpagunintlgs3foe07h foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK19ifg5dswmjghfh6yj7sycinm foreign key (id_venta) references Venta
+Hibernate: alter table Promocion add constraint FK3acoavp2lmq4r6i474na3lga8 foreign key (tarjeta_id) references Tarjeta
+Hibernate: alter table Tarjeta add constraint FKrehkv3i3agm32o92t5ekpdbni foreign key (id_cliente) references Cliente
+Hibernate: alter table Venta add constraint FKbv0rwi1bkq5qsqv2qyy52124i foreign key (cliente_id) references Cliente
+Hibernate: values next value for Categoria_SEQ
+Hibernate: insert into Categoria (tipo,id) values (?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre from Cliente c1_0 where c1_0.dni=?
+Hibernate: values next value for Cliente_SEQ
+Hibernate: insert into Cliente (apellido,dni,email,nombre,id) values (?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: values next value for Tarjeta_SEQ
+Hibernate: insert into Tarjeta (activa,fondos_disponibles,nombre,numero_tarjeta,id) values (?,?,?,?,?)
+Hibernate: update Tarjeta set id_cliente=? where id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.nombre=?
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,tarjeta_id,tipo_promocion,id) values (?,?,?,?,'PC',?)
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,nombre,tipo_promocion,id) values (?,?,?,?,'PP',?)
+Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.codigo,p1_0.descripcion,p1_0.nombre,p1_0.precio,p1_0.version from Producto p1_0
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.id=?
+Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.codigo,p1_0.descripcion,p1_0.nombre,p1_0.precio,p1_0.version from Producto p1_0 where p1_0.id in (?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.descuento,p1_0.fecha_fin,p1_0.fecha_inicio,p1_0.nombre from Promocion p1_0 where ? between p1_0.fecha_inicio and p1_0.fecha_fin and p1_0.tipo_promocion='PP'
+Hibernate: select p1_0.id,p1_0.descuento,p1_0.fecha_fin,p1_0.fecha_inicio,p1_0.tarjeta_id from Promocion p1_0 where ? between p1_0.fecha_inicio and p1_0.fecha_fin and p1_0.tipo_promocion='PC'
+14:12:52.501 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001008: Cleaning up connection pool [jdbc:derby:memory:userauth;create=true]
+]]></system-out>
+  </testcase>
+  <testcase name="Should_ThrowRuntimeException_When_TryCalculateAmountWithoutAProductList" classname="ar.unrn.tp.jpa.servicios.VentaServiceTest" time="0.414">
+    <system-out><![CDATA[14:12:52.509 [main] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: jpa-derby-embedded]
+14:12:52.514 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+14:12:52.514 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+14:12:52.514 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+14:12:52.514 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+14:12:52.567 [main] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+14:12:52.568 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+14:12:52.568 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001012: Connecting with JDBC URL [jdbc:derby:memory:userauth;create=true]
+14:12:52.568 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001001: Connection properties: {password=****, user=app}
+14:12:52.568 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001003: Autocommit mode: false
+14:12:52.568 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001115: Connection pool size: 20 (min=1)
+14:12:52.604 [main] INFO org.hibernate.bytecode.internal.BytecodeProviderInitiator -- HHH000021: Bytecode provider name : bytebuddy
+14:12:52.724 [main] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: alter table Producto drop constraint FK1c1lfcsftxf2tsvnljv4hh9or
+14:12:52.725 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@74715fd6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table producto_vendido drop constraint FK57pwr6kpagunintlgs3foe07h
+Hibernate: alter table producto_vendido drop constraint FK19ifg5dswmjghfh6yj7sycinm
+Hibernate: alter table Promocion drop constraint FK3acoavp2lmq4r6i474na3lga8
+Hibernate: alter table Tarjeta drop constraint FKrehkv3i3agm32o92t5ekpdbni
+Hibernate: alter table Venta drop constraint FKbv0rwi1bkq5qsqv2qyy52124i
+Hibernate: drop table Categoria
+Hibernate: drop table Cliente
+Hibernate: drop table next_number
+Hibernate: drop table Producto
+Hibernate: drop table producto_vendido
+Hibernate: drop table Promocion
+Hibernate: drop table Tarjeta
+Hibernate: drop table Venta
+Hibernate: drop sequence Categoria_SEQ restrict
+Hibernate: drop sequence Cliente_SEQ restrict
+Hibernate: drop sequence next_number_SEQ restrict
+Hibernate: drop sequence Producto_SEQ restrict
+Hibernate: drop sequence producto_vendido_SEQ restrict
+Hibernate: drop sequence Promocion_SEQ restrict
+Hibernate: drop sequence Tarjeta_SEQ restrict
+Hibernate: drop sequence Venta_SEQ restrict
+Hibernate: create sequence Categoria_SEQ start with 1 increment by 50
+14:12:52.773 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7ca5250b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: create sequence Cliente_SEQ start with 1 increment by 50
+Hibernate: create sequence next_number_SEQ start with 1 increment by 50
+Hibernate: create sequence Producto_SEQ start with 1 increment by 50
+Hibernate: create sequence producto_vendido_SEQ start with 1 increment by 50
+Hibernate: create sequence Promocion_SEQ start with 1 increment by 50
+Hibernate: create sequence Tarjeta_SEQ start with 1 increment by 50
+Hibernate: create sequence Venta_SEQ start with 1 increment by 50
+Hibernate: create table Categoria (id bigint not null, tipo varchar(255), primary key (id))
+Hibernate: create table Cliente (id bigint not null, apellido varchar(255), dni varchar(255) unique, email varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table next_number (actual integer not null, anio integer unique, id bigint not null, primary key (id))
+Hibernate: create table Producto (precio float(52) not null, categoria_id bigint, id bigint not null, version bigint, codigo varchar(255) unique, descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table producto_vendido (precio float(52) not null, categoria_id bigint, id bigint not null, id_venta bigint, codigo varchar(255), descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table Promocion (descuento float(52) not null, fecha_fin date, fecha_inicio date, id bigint not null, tarjeta_id bigint, tipo_promocion varchar(31) not null, nombre varchar(255), primary key (id))
+Hibernate: create table Tarjeta (activa boolean not null, fondos_disponibles float(52), id bigint not null, id_cliente bigint, nombre varchar(255), numero_tarjeta varchar(255), primary key (id))
+Hibernate: create table Venta (fecha date, monto_total float(52), cliente_id bigint, id bigint not null, numero_unico varchar(255) unique, primary key (id))
+Hibernate: alter table Producto add constraint FK1c1lfcsftxf2tsvnljv4hh9or foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK57pwr6kpagunintlgs3foe07h foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK19ifg5dswmjghfh6yj7sycinm foreign key (id_venta) references Venta
+Hibernate: alter table Promocion add constraint FK3acoavp2lmq4r6i474na3lga8 foreign key (tarjeta_id) references Tarjeta
+Hibernate: alter table Tarjeta add constraint FKrehkv3i3agm32o92t5ekpdbni foreign key (id_cliente) references Cliente
+Hibernate: alter table Venta add constraint FKbv0rwi1bkq5qsqv2qyy52124i foreign key (cliente_id) references Cliente
+Hibernate: values next value for Categoria_SEQ
+Hibernate: insert into Categoria (tipo,id) values (?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre from Cliente c1_0 where c1_0.dni=?
+Hibernate: values next value for Cliente_SEQ
+Hibernate: insert into Cliente (apellido,dni,email,nombre,id) values (?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: values next value for Tarjeta_SEQ
+Hibernate: insert into Tarjeta (activa,fondos_disponibles,nombre,numero_tarjeta,id) values (?,?,?,?,?)
+Hibernate: update Tarjeta set id_cliente=? where id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.nombre=?
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,tarjeta_id,tipo_promocion,id) values (?,?,?,?,'PC',?)
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,nombre,tipo_promocion,id) values (?,?,?,?,'PP',?)
+14:12:52.915 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001008: Cleaning up connection pool [jdbc:derby:memory:userauth;create=true]
+]]></system-out>
+  </testcase>
+  <testcase name="Should_BeTrue_When_SalesListIsNotEmpty" classname="ar.unrn.tp.jpa.servicios.VentaServiceTest" time="0.522">
+    <system-out><![CDATA[14:12:52.925 [main] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: jpa-derby-embedded]
+14:12:52.929 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+14:12:52.929 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+14:12:52.929 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+14:12:52.929 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+14:12:52.968 [main] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+14:12:52.968 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+14:12:52.968 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001012: Connecting with JDBC URL [jdbc:derby:memory:userauth;create=true]
+14:12:52.968 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001001: Connection properties: {password=****, user=app}
+14:12:52.968 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001003: Autocommit mode: false
+14:12:52.968 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001115: Connection pool size: 20 (min=1)
+14:12:53.015 [main] INFO org.hibernate.bytecode.internal.BytecodeProviderInitiator -- HHH000021: Bytecode provider name : bytebuddy
+14:12:53.147 [main] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: alter table Producto drop constraint FK1c1lfcsftxf2tsvnljv4hh9or
+14:12:53.147 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a245005] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table producto_vendido drop constraint FK57pwr6kpagunintlgs3foe07h
+Hibernate: alter table producto_vendido drop constraint FK19ifg5dswmjghfh6yj7sycinm
+Hibernate: alter table Promocion drop constraint FK3acoavp2lmq4r6i474na3lga8
+Hibernate: alter table Tarjeta drop constraint FKrehkv3i3agm32o92t5ekpdbni
+Hibernate: alter table Venta drop constraint FKbv0rwi1bkq5qsqv2qyy52124i
+Hibernate: drop table Categoria
+Hibernate: drop table Cliente
+Hibernate: drop table next_number
+Hibernate: drop table Producto
+Hibernate: drop table producto_vendido
+Hibernate: drop table Promocion
+Hibernate: drop table Tarjeta
+Hibernate: drop table Venta
+Hibernate: drop sequence Categoria_SEQ restrict
+Hibernate: drop sequence Cliente_SEQ restrict
+Hibernate: drop sequence next_number_SEQ restrict
+Hibernate: drop sequence Producto_SEQ restrict
+Hibernate: drop sequence producto_vendido_SEQ restrict
+Hibernate: drop sequence Promocion_SEQ restrict
+Hibernate: drop sequence Tarjeta_SEQ restrict
+Hibernate: drop sequence Venta_SEQ restrict
+Hibernate: create sequence Categoria_SEQ start with 1 increment by 50
+14:12:53.183 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@391a622d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: create sequence Cliente_SEQ start with 1 increment by 50
+Hibernate: create sequence next_number_SEQ start with 1 increment by 50
+Hibernate: create sequence Producto_SEQ start with 1 increment by 50
+Hibernate: create sequence producto_vendido_SEQ start with 1 increment by 50
+Hibernate: create sequence Promocion_SEQ start with 1 increment by 50
+Hibernate: create sequence Tarjeta_SEQ start with 1 increment by 50
+Hibernate: create sequence Venta_SEQ start with 1 increment by 50
+Hibernate: create table Categoria (id bigint not null, tipo varchar(255), primary key (id))
+Hibernate: create table Cliente (id bigint not null, apellido varchar(255), dni varchar(255) unique, email varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table next_number (actual integer not null, anio integer unique, id bigint not null, primary key (id))
+Hibernate: create table Producto (precio float(52) not null, categoria_id bigint, id bigint not null, version bigint, codigo varchar(255) unique, descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table producto_vendido (precio float(52) not null, categoria_id bigint, id bigint not null, id_venta bigint, codigo varchar(255), descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table Promocion (descuento float(52) not null, fecha_fin date, fecha_inicio date, id bigint not null, tarjeta_id bigint, tipo_promocion varchar(31) not null, nombre varchar(255), primary key (id))
+Hibernate: create table Tarjeta (activa boolean not null, fondos_disponibles float(52), id bigint not null, id_cliente bigint, nombre varchar(255), numero_tarjeta varchar(255), primary key (id))
+Hibernate: create table Venta (fecha date, monto_total float(52), cliente_id bigint, id bigint not null, numero_unico varchar(255) unique, primary key (id))
+Hibernate: alter table Producto add constraint FK1c1lfcsftxf2tsvnljv4hh9or foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK57pwr6kpagunintlgs3foe07h foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK19ifg5dswmjghfh6yj7sycinm foreign key (id_venta) references Venta
+Hibernate: alter table Promocion add constraint FK3acoavp2lmq4r6i474na3lga8 foreign key (tarjeta_id) references Tarjeta
+Hibernate: alter table Tarjeta add constraint FKrehkv3i3agm32o92t5ekpdbni foreign key (id_cliente) references Cliente
+Hibernate: alter table Venta add constraint FKbv0rwi1bkq5qsqv2qyy52124i foreign key (cliente_id) references Cliente
+Hibernate: values next value for Categoria_SEQ
+Hibernate: insert into Categoria (tipo,id) values (?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre from Cliente c1_0 where c1_0.dni=?
+Hibernate: values next value for Cliente_SEQ
+Hibernate: insert into Cliente (apellido,dni,email,nombre,id) values (?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: values next value for Tarjeta_SEQ
+Hibernate: insert into Tarjeta (activa,fondos_disponibles,nombre,numero_tarjeta,id) values (?,?,?,?,?)
+Hibernate: update Tarjeta set id_cliente=? where id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.nombre=?
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,tarjeta_id,tipo_promocion,id) values (?,?,?,?,'PC',?)
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,nombre,tipo_promocion,id) values (?,?,?,?,'PP',?)
+Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.codigo,p1_0.descripcion,p1_0.nombre,p1_0.precio,p1_0.version from Producto p1_0
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.codigo,p1_0.descripcion,p1_0.nombre,p1_0.precio,p1_0.version from Producto p1_0 where p1_0.id in (?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: select p1_0.id,p1_0.descuento,p1_0.fecha_fin,p1_0.fecha_inicio,p1_0.nombre from Promocion p1_0 where ? between p1_0.fecha_inicio and p1_0.fecha_fin and p1_0.tipo_promocion='PP'
+Hibernate: select p1_0.id,p1_0.descuento,p1_0.fecha_fin,p1_0.fecha_inicio,p1_0.tarjeta_id from Promocion p1_0 where ? between p1_0.fecha_inicio and p1_0.fecha_fin and p1_0.tipo_promocion='PC'
+Hibernate: select n1_0.id,n1_0.actual,n1_0.anio from next_number n1_0 where n1_0.anio=? for update with rs
+Hibernate: values next value for next_number_SEQ
+Hibernate: values next value for Venta_SEQ
+Hibernate: values next value for producto_vendido_SEQ
+Hibernate: values next value for producto_vendido_SEQ
+Hibernate: insert into next_number (actual,anio,id) values (?,?,?)
+Hibernate: insert into Venta (cliente_id,fecha,monto_total,numero_unico,id) values (?,?,?,?,?)
+Hibernate: insert into producto_vendido (categoria_id,codigo,descripcion,nombre,precio,id) values (?,?,?,?,?,?)
+Hibernate: insert into producto_vendido (categoria_id,codigo,descripcion,nombre,precio,id) values (?,?,?,?,?,?)
+Hibernate: update Tarjeta set activa=?,fondos_disponibles=?,nombre=?,numero_tarjeta=? where id=?
+Hibernate: update producto_vendido set id_venta=? where id=?
+Hibernate: update producto_vendido set id_venta=? where id=?
+Hibernate: select v1_0.id,v1_0.cliente_id,v1_0.fecha,v1_0.monto_total,v1_0.numero_unico from Venta v1_0
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+14:12:53.439 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001008: Cleaning up connection pool [jdbc:derby:memory:userauth;create=true]
+]]></system-out>
+  </testcase>
+  <testcase name="Should_ThrowRuntimeException_When_ASaleIsMadeWithoutAValidCard" classname="ar.unrn.tp.jpa.servicios.VentaServiceTest" time="0.386">
+    <system-out><![CDATA[14:12:53.454 [main] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: jpa-derby-embedded]
+14:12:53.458 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+14:12:53.458 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+14:12:53.458 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+14:12:53.458 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+14:12:53.504 [main] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+14:12:53.505 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+14:12:53.505 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001012: Connecting with JDBC URL [jdbc:derby:memory:userauth;create=true]
+14:12:53.505 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001001: Connection properties: {password=****, user=app}
+14:12:53.505 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001003: Autocommit mode: false
+14:12:53.505 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001115: Connection pool size: 20 (min=1)
+14:12:53.534 [main] INFO org.hibernate.bytecode.internal.BytecodeProviderInitiator -- HHH000021: Bytecode provider name : bytebuddy
+14:12:53.642 [main] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: alter table Producto drop constraint FK1c1lfcsftxf2tsvnljv4hh9or
+14:12:53.642 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@553309a6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table producto_vendido drop constraint FK57pwr6kpagunintlgs3foe07h
+Hibernate: alter table producto_vendido drop constraint FK19ifg5dswmjghfh6yj7sycinm
+Hibernate: alter table Promocion drop constraint FK3acoavp2lmq4r6i474na3lga8
+Hibernate: alter table Tarjeta drop constraint FKrehkv3i3agm32o92t5ekpdbni
+Hibernate: alter table Venta drop constraint FKbv0rwi1bkq5qsqv2qyy52124i
+Hibernate: drop table Categoria
+Hibernate: drop table Cliente
+Hibernate: drop table next_number
+Hibernate: drop table Producto
+Hibernate: drop table producto_vendido
+Hibernate: drop table Promocion
+Hibernate: drop table Tarjeta
+Hibernate: drop table Venta
+Hibernate: drop sequence Categoria_SEQ restrict
+Hibernate: drop sequence Cliente_SEQ restrict
+Hibernate: drop sequence next_number_SEQ restrict
+Hibernate: drop sequence Producto_SEQ restrict
+Hibernate: drop sequence producto_vendido_SEQ restrict
+Hibernate: drop sequence Promocion_SEQ restrict
+Hibernate: drop sequence Tarjeta_SEQ restrict
+Hibernate: drop sequence Venta_SEQ restrict
+Hibernate: create sequence Categoria_SEQ start with 1 increment by 50
+14:12:53.688 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7b31b8f9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: create sequence Cliente_SEQ start with 1 increment by 50
+Hibernate: create sequence next_number_SEQ start with 1 increment by 50
+Hibernate: create sequence Producto_SEQ start with 1 increment by 50
+Hibernate: create sequence producto_vendido_SEQ start with 1 increment by 50
+Hibernate: create sequence Promocion_SEQ start with 1 increment by 50
+Hibernate: create sequence Tarjeta_SEQ start with 1 increment by 50
+Hibernate: create sequence Venta_SEQ start with 1 increment by 50
+Hibernate: create table Categoria (id bigint not null, tipo varchar(255), primary key (id))
+Hibernate: create table Cliente (id bigint not null, apellido varchar(255), dni varchar(255) unique, email varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table next_number (actual integer not null, anio integer unique, id bigint not null, primary key (id))
+Hibernate: create table Producto (precio float(52) not null, categoria_id bigint, id bigint not null, version bigint, codigo varchar(255) unique, descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table producto_vendido (precio float(52) not null, categoria_id bigint, id bigint not null, id_venta bigint, codigo varchar(255), descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table Promocion (descuento float(52) not null, fecha_fin date, fecha_inicio date, id bigint not null, tarjeta_id bigint, tipo_promocion varchar(31) not null, nombre varchar(255), primary key (id))
+Hibernate: create table Tarjeta (activa boolean not null, fondos_disponibles float(52), id bigint not null, id_cliente bigint, nombre varchar(255), numero_tarjeta varchar(255), primary key (id))
+Hibernate: create table Venta (fecha date, monto_total float(52), cliente_id bigint, id bigint not null, numero_unico varchar(255) unique, primary key (id))
+Hibernate: alter table Producto add constraint FK1c1lfcsftxf2tsvnljv4hh9or foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK57pwr6kpagunintlgs3foe07h foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK19ifg5dswmjghfh6yj7sycinm foreign key (id_venta) references Venta
+Hibernate: alter table Promocion add constraint FK3acoavp2lmq4r6i474na3lga8 foreign key (tarjeta_id) references Tarjeta
+Hibernate: alter table Tarjeta add constraint FKrehkv3i3agm32o92t5ekpdbni foreign key (id_cliente) references Cliente
+Hibernate: alter table Venta add constraint FKbv0rwi1bkq5qsqv2qyy52124i foreign key (cliente_id) references Cliente
+Hibernate: values next value for Categoria_SEQ
+Hibernate: insert into Categoria (tipo,id) values (?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre from Cliente c1_0 where c1_0.dni=?
+Hibernate: values next value for Cliente_SEQ
+Hibernate: insert into Cliente (apellido,dni,email,nombre,id) values (?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: values next value for Tarjeta_SEQ
+Hibernate: insert into Tarjeta (activa,fondos_disponibles,nombre,numero_tarjeta,id) values (?,?,?,?,?)
+Hibernate: update Tarjeta set id_cliente=? where id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.nombre=?
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,tarjeta_id,tipo_promocion,id) values (?,?,?,?,'PC',?)
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,nombre,tipo_promocion,id) values (?,?,?,?,'PP',?)
+Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.codigo,p1_0.descripcion,p1_0.nombre,p1_0.precio,p1_0.version from Producto p1_0
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.id=?
+14:12:53.827 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001008: Cleaning up connection pool [jdbc:derby:memory:userauth;create=true]
+]]></system-out>
+  </testcase>
+  <testcase name="Should_ThrowRuntimeException_When_TryCalculateAmountWithoutAValidCard" classname="ar.unrn.tp.jpa.servicios.VentaServiceTest" time="0.41">
+    <system-out><![CDATA[14:12:53.835 [main] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: jpa-derby-embedded]
+14:12:53.838 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+14:12:53.839 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+14:12:53.839 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+14:12:53.839 [main] WARN org.hibernate.orm.deprecation -- HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+14:12:53.884 [main] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+14:12:53.885 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+14:12:53.885 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001012: Connecting with JDBC URL [jdbc:derby:memory:userauth;create=true]
+14:12:53.885 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001001: Connection properties: {password=****, user=app}
+14:12:53.885 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001003: Autocommit mode: false
+14:12:53.885 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001115: Connection pool size: 20 (min=1)
+14:12:53.915 [main] INFO org.hibernate.bytecode.internal.BytecodeProviderInitiator -- HHH000021: Bytecode provider name : bytebuddy
+14:12:54.004 [main] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: alter table Producto drop constraint FK1c1lfcsftxf2tsvnljv4hh9or
+14:12:54.005 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2acd6251] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table producto_vendido drop constraint FK57pwr6kpagunintlgs3foe07h
+Hibernate: alter table producto_vendido drop constraint FK19ifg5dswmjghfh6yj7sycinm
+Hibernate: alter table Promocion drop constraint FK3acoavp2lmq4r6i474na3lga8
+Hibernate: alter table Tarjeta drop constraint FKrehkv3i3agm32o92t5ekpdbni
+Hibernate: alter table Venta drop constraint FKbv0rwi1bkq5qsqv2qyy52124i
+Hibernate: drop table Categoria
+Hibernate: drop table Cliente
+Hibernate: drop table next_number
+Hibernate: drop table Producto
+Hibernate: drop table producto_vendido
+Hibernate: drop table Promocion
+Hibernate: drop table Tarjeta
+Hibernate: drop table Venta
+Hibernate: drop sequence Categoria_SEQ restrict
+Hibernate: drop sequence Cliente_SEQ restrict
+Hibernate: drop sequence next_number_SEQ restrict
+Hibernate: drop sequence Producto_SEQ restrict
+Hibernate: drop sequence producto_vendido_SEQ restrict
+Hibernate: drop sequence Promocion_SEQ restrict
+Hibernate: drop sequence Tarjeta_SEQ restrict
+Hibernate: drop sequence Venta_SEQ restrict
+Hibernate: create sequence Categoria_SEQ start with 1 increment by 50
+14:12:54.047 [main] INFO org.hibernate.orm.connections.access -- HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7eb6889c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: create sequence Cliente_SEQ start with 1 increment by 50
+Hibernate: create sequence next_number_SEQ start with 1 increment by 50
+Hibernate: create sequence Producto_SEQ start with 1 increment by 50
+Hibernate: create sequence producto_vendido_SEQ start with 1 increment by 50
+Hibernate: create sequence Promocion_SEQ start with 1 increment by 50
+Hibernate: create sequence Tarjeta_SEQ start with 1 increment by 50
+Hibernate: create sequence Venta_SEQ start with 1 increment by 50
+Hibernate: create table Categoria (id bigint not null, tipo varchar(255), primary key (id))
+Hibernate: create table Cliente (id bigint not null, apellido varchar(255), dni varchar(255) unique, email varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table next_number (actual integer not null, anio integer unique, id bigint not null, primary key (id))
+Hibernate: create table Producto (precio float(52) not null, categoria_id bigint, id bigint not null, version bigint, codigo varchar(255) unique, descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table producto_vendido (precio float(52) not null, categoria_id bigint, id bigint not null, id_venta bigint, codigo varchar(255), descripcion varchar(255), nombre varchar(255), primary key (id))
+Hibernate: create table Promocion (descuento float(52) not null, fecha_fin date, fecha_inicio date, id bigint not null, tarjeta_id bigint, tipo_promocion varchar(31) not null, nombre varchar(255), primary key (id))
+Hibernate: create table Tarjeta (activa boolean not null, fondos_disponibles float(52), id bigint not null, id_cliente bigint, nombre varchar(255), numero_tarjeta varchar(255), primary key (id))
+Hibernate: create table Venta (fecha date, monto_total float(52), cliente_id bigint, id bigint not null, numero_unico varchar(255) unique, primary key (id))
+Hibernate: alter table Producto add constraint FK1c1lfcsftxf2tsvnljv4hh9or foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK57pwr6kpagunintlgs3foe07h foreign key (categoria_id) references Categoria
+Hibernate: alter table producto_vendido add constraint FK19ifg5dswmjghfh6yj7sycinm foreign key (id_venta) references Venta
+Hibernate: alter table Promocion add constraint FK3acoavp2lmq4r6i474na3lga8 foreign key (tarjeta_id) references Tarjeta
+Hibernate: alter table Tarjeta add constraint FKrehkv3i3agm32o92t5ekpdbni foreign key (id_cliente) references Cliente
+Hibernate: alter table Venta add constraint FKbv0rwi1bkq5qsqv2qyy52124i foreign key (cliente_id) references Cliente
+Hibernate: values next value for Categoria_SEQ
+Hibernate: insert into Categoria (tipo,id) values (?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre from Cliente c1_0 where c1_0.dni=?
+Hibernate: values next value for Cliente_SEQ
+Hibernate: insert into Cliente (apellido,dni,email,nombre,id) values (?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: values next value for Producto_SEQ
+Hibernate: insert into Producto (categoria_id,codigo,descripcion,nombre,precio,version,id) values (?,?,?,?,?,?,?)
+Hibernate: select c1_0.id,c1_0.apellido,c1_0.dni,c1_0.email,c1_0.nombre,t1_0.id_cliente,t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Cliente c1_0 left join Tarjeta t1_0 on c1_0.id=t1_0.id_cliente where c1_0.id=?
+Hibernate: values next value for Tarjeta_SEQ
+Hibernate: insert into Tarjeta (activa,fondos_disponibles,nombre,numero_tarjeta,id) values (?,?,?,?,?)
+Hibernate: update Tarjeta set id_cliente=? where id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.nombre=?
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,tarjeta_id,tipo_promocion,id) values (?,?,?,?,'PC',?)
+Hibernate: values next value for Promocion_SEQ
+Hibernate: insert into Promocion (descuento,fecha_fin,fecha_inicio,nombre,tipo_promocion,id) values (?,?,?,?,'PP',?)
+Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.codigo,p1_0.descripcion,p1_0.nombre,p1_0.precio,p1_0.version from Producto p1_0
+Hibernate: select c1_0.id,c1_0.tipo from Categoria c1_0 where c1_0.id=?
+Hibernate: select t1_0.id,t1_0.activa,t1_0.fondos_disponibles,t1_0.nombre,t1_0.numero_tarjeta from Tarjeta t1_0 where t1_0.id=?
+14:12:54.238 [main] INFO org.hibernate.orm.connections.pooling -- HHH10001008: Cleaning up connection pool [jdbc:derby:memory:userauth;create=true]
+]]></system-out>
+  </testcase>
+</testsuite>
