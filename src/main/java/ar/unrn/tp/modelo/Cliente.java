@@ -60,6 +60,8 @@ public class Cliente {
         return matcher.matches();
     }
 
+
+
     public boolean miTarjeta(Tarjeta tarjeta) {
         return this.tarjetas.stream().anyMatch(t -> t.esTarjeta(tarjeta));
     }
@@ -96,39 +98,39 @@ public class Cliente {
         return this.email.equals(email);
     }
 
-    private Long getId() {
+    public Long getId() {
         return id;
     }
 
-    private String getNombre() {
+    public String getNombre() {
         return this.nombre;
     }
 
-    private void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    private String getApellido() {
+    public String getApellido() {
         return this.apellido;
     }
 
-    private void setApellido(String apellido) {
+    public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
-    private String getDni() {
+    public String getDni() {
         return this.dni;
     }
 
-    private void setDni(String dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
-    private String getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
-    private void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -150,5 +152,13 @@ public class Cliente {
 
     public void email(String email) {
         this.email = email;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTarjetas(List<Tarjeta> tarjetas) {
+        this.tarjetas = tarjetas;
     }
 }

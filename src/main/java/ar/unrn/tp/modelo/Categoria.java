@@ -19,19 +19,19 @@ public class Categoria {
         return this.tipo;
     }
 
-    private Long getId() {
+    public Long getId() {
         return id;
     }
 
-    private void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    private String getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    private void setTipo(String tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

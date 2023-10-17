@@ -12,7 +12,6 @@ import redis.clients.jedis.JedisPool;
 @RequiredArgsConstructor
 public class RedisCacheService implements CacheService {
     private final JedisPool jedisPool;
-    private final Gson gson = new Gson();
 
     @Value("${redis.sessiondata.ttl}")
     private int ttl;
@@ -30,8 +29,7 @@ public class RedisCacheService implements CacheService {
         try {
             jedis = jedisPool.getResource();
 
-            String json = gson.toJson(value);
-            jedis.set(key, json);
+            jedis.set(key, value);
             jedis.expire(key, ttl);
 
         } catch (Exception e) {

@@ -16,6 +16,7 @@ import jakarta.persistence.*;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -162,8 +163,7 @@ public class VentaServiceJPA implements VentaService {
 
         if(json != null) {
             try {
-                TypeReference<List<Venta>> typeReference = new TypeReference<List<Venta>>() {};
-                ventas = mapper.readValue(cacheService.retrieve(key), typeReference);
+                ventas = mapper.readValue(json, new TypeReference<List<Venta>>() {});
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             }

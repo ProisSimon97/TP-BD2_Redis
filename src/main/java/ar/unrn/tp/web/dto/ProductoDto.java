@@ -25,7 +25,7 @@ public class ProductoDto {
                 .descripcion(producto.descripcion())
                 .categoria(producto.categoria().tipo())
                 .precio(producto.getPrecio())
-                .marca(producto.getMarca().getTipo())
+                .marca(producto.getMarca().getNombre())
                 .version(producto.getVersion())
                 .build();
     }

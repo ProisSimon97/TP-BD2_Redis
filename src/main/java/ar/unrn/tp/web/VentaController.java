@@ -2,6 +2,7 @@ package ar.unrn.tp.web;
 
 import ar.unrn.tp.api.VentaService;
 import ar.unrn.tp.modelo.Venta;
+import ar.unrn.tp.web.dto.VentaDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -34,9 +35,13 @@ public class VentaController {
     }
 
     @GetMapping({"/idCliente"})
-    public ResponseEntity<List<Venta>> misCompras(@NotNull @RequestParam Long idCliente) throws JsonProcessingException {
+    public ResponseEntity<List<VentaDto>> misCompras(@NotNull @RequestParam Long idCliente) throws JsonProcessingException {
         List<Venta> result = ventaService.misCompras(idCliente);
 
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        List<VentaDto> response = result.stream()
+                .map(VentaDto::fromDomain)
+                .toList();
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

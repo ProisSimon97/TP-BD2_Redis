@@ -72,39 +72,39 @@ public class Tarjeta {
         return this.nombre.equals(tarjeta.getNombre());
     }
 
-    private String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    private Long getId() {
+    public Long getId() {
         return id;
     }
 
-    private void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    private String getNumeroTarjeta() {
+    public String getNumeroTarjeta() {
         return numeroTarjeta;
     }
 
-    private void setNumeroTarjeta(String numeroTarjeta) {
+    public void setNumeroTarjeta(String numeroTarjeta) {
         this.numeroTarjeta = numeroTarjeta;
     }
 
-    private void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    private void setActiva(boolean activa) {
+    public void setActiva(boolean activa) {
         this.activa = activa;
     }
 
-    private double getFondosDisponibles() {
+    public double getFondosDisponibles() {
         return fondosDisponibles;
     }
 
-    private void setFondosDisponibles(double fondosDisponibles) {
+    public void setFondosDisponibles(double fondosDisponibles) {
         this.fondosDisponibles = fondosDisponibles;
     }
 

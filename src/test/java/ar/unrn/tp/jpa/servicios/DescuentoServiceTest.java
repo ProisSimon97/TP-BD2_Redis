@@ -43,7 +43,7 @@ public class DescuentoServiceTest {
             PromocionProducto promocionProducto =  query.getSingleResult();
 
             Assertions.assertTrue(promocionProducto.esFecha(fechaInicio, fechaFin));
-            Assertions.assertTrue(promocionProducto.esMarca(marca.getTipo()));
+            Assertions.assertTrue(promocionProducto.esMarca(marca.getNombre()));
             Assertions.assertTrue(promocionProducto.esDescuento(0.5));
         });
     }

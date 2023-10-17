@@ -65,7 +65,7 @@ public class Producto {
         return this.marca.equals(marca);
     }
 
-    public boolean esMarca(String marca) { return this.marca.getTipo().equals(marca); }
+    public boolean esMarca(String marca) { return this.marca.getNombre().equals(marca); }
 
     public boolean esCodigo(String codigo) {
         return this.codigo.equals(codigo);
@@ -105,35 +105,35 @@ public class Producto {
         return this.marca;
     }
 
-    private Long getId() {
+    public Long getId() {
         return id;
     }
 
-    private void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    private String getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    private void setCodigo(String codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
-    private String getDescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 
-    private void setDescripcion(String descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    private Categoria getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    private void setCategoria(Categoria categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
@@ -141,7 +141,7 @@ public class Producto {
         this.precio = precio;
     }
 
-    private void setMarca(Marca marca) {
+    public void setMarca(Marca marca) {
         this.marca = marca;
     }
 

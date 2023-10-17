@@ -35,7 +35,7 @@ public class PromocionProducto extends Promocion {
     private boolean aplicaDescuento(Producto producto) {
         LocalDate fechaActual = LocalDate.now();
 
-        if(producto.esMarca(this.marca.getTipo())) {
+        if(producto.esMarca(this.marca.getNombre())) {
             if (fechaActual.isAfter(fechaInicio) && fechaActual.isBefore(fechaFin)) {
                 return true;
             }
@@ -45,10 +45,10 @@ public class PromocionProducto extends Promocion {
     }
 
     public String marca() {
-        return this.marca.getTipo();
+        return this.marca.getNombre();
     }
 
-    public boolean esMarca(String marca) { return this.marca.getTipo().equals(marca); }
+    public boolean esMarca(String marca) { return this.marca.getNombre().equals(marca); }
 
     @Override
     public double calcularDescuento(Tarjeta tarjeta) {
