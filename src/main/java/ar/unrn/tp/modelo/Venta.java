@@ -2,6 +2,7 @@ package ar.unrn.tp.modelo;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -9,7 +10,7 @@ public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private LocalDate fecha;
+    private LocalDateTime fecha;
     @ManyToOne
     private Cliente cliente;
     @OneToMany(cascade = CascadeType.PERSIST)
@@ -22,14 +23,14 @@ public class Venta {
 
     protected Venta() { }
 
-    public Venta(LocalDate fechaHora, Cliente cliente, List<ProductoVendido> productosComprados, double montoTotal) {
+    public Venta(LocalDateTime fechaHora, Cliente cliente, List<ProductoVendido> productosComprados, double montoTotal) {
         this.fecha = fechaHora;
         this.cliente = cliente;
         this.productosComprados = productosComprados;
         this.montoTotal = montoTotal;
     }
 
-    public Venta(Long id, LocalDate fechaHora, Cliente cliente, List<ProductoVendido> productosComprados, double montoTotal, String numeroUnico) {
+    public Venta(Long id, LocalDateTime fechaHora, Cliente cliente, List<ProductoVendido> productosComprados, double montoTotal, String numeroUnico) {
         this.id = id;
         this.fecha = fechaHora;
         this.cliente = cliente;
@@ -42,7 +43,7 @@ public class Venta {
         return id;
     }
 
-    public LocalDate getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
@@ -74,7 +75,7 @@ public class Venta {
         this.id = id;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 

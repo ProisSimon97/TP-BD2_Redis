@@ -1,38 +1,29 @@
 package ar.unrn.tp.jpa.servicios;
 
 import ar.unrn.tp.api.VentaService;
-import ar.unrn.tp.api.redis.CacheService;
+import ar.unrn.tp.redis.CacheService;
 import ar.unrn.tp.modelo.*;
 import ar.unrn.tp.modelo.promocion.PromocionCompra;
 import ar.unrn.tp.modelo.promocion.PromocionProducto;
-import ar.unrn.tp.util.DateTypeAdapter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
 @Service
 public class VentaServiceJPA implements VentaService {
-    private EntityManagerFactory emf;
-
-    private CacheService cacheService;
-    private Gson gson;
+    private final EntityManagerFactory emf;
+    private final CacheService cacheService;
 
     public VentaServiceJPA(EntityManagerFactory emf, CacheService cacheService) {
         this.emf = emf;
         this.cacheService = cacheService;
-        this.gson = new GsonBuilder()
-                .registerTypeAdapter(LocalDate.class, new DateTypeAdapter())
-                .create();
     }
 
     @Override
@@ -137,7 +128,7 @@ public class VentaServiceJPA implements VentaService {
     }
 
     @Override
-    public List ventas() {
+    public List<Venta> ventas() {
         EntityManager em = emf.createEntityManager();
 
         try {
@@ -155,46 +146,45 @@ public class VentaServiceJPA implements VentaService {
     @Override
     public List<Venta> misCompras(Long idCliente) {
         String key = "venta:" + idCliente;
-        List<Venta> ventas = null;
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());
-
+        ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
         String json = cacheService.retrieve(key);
+        List<Venta> ventas;
 
-        if(json != null) {
-            try {
+        try {
+            if (json != null) {
                 ventas = mapper.readValue(json, new TypeReference<List<Venta>>() {});
-            } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
+            } else {
+                EntityManager em = emf.createEntityManager();
+
+                try {
+                    TypedQuery<Venta> query = em.createQuery(
+                            "SELECT v FROM Venta v WHERE v.cliente.id = :idCliente ORDER BY v.fecha DESC",
+                            Venta.class
+                    );
+                    query.setParameter("idCliente", idCliente);
+                    query.setMaxResults(3);
+
+                    ventas = query.getResultList();
+
+
+                    String ventasJson = mapper.writeValueAsString(ventas);
+                    cacheService.store(key, ventasJson);
+
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                } finally {
+                    if (em != null && em.isOpen()) {
+                        em.close();
+                    }
+                }
             }
-        }
-
-        if(ventas == null) {
-            EntityManager em = emf.createEntityManager();
-
-            try {
-                TypedQuery<Venta> query = em.createQuery(
-                        "SELECT v FROM Venta v WHERE v.cliente.id = :idCliente ORDER BY v.fecha DESC",
-                        Venta.class
-                );
-
-                query.setParameter("idCliente", idCliente);
-                query.setMaxResults(3);
-
-                ventas = query.getResultList();
-
-                cacheService.store(key, mapper.writeValueAsString(ventas));
-
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            } finally {
-                if (em != null && em.isOpen())
-                    em.close();
-            }
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
         }
 
         return ventas;
     }
+
 
     public void inTransactionExecute(Consumer<EntityManager> bloqueDeCodigo) {
         EntityManager em = emf.createEntityManager();

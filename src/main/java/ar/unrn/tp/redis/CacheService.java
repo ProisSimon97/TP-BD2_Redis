@@ -1,4 +1,4 @@
-package ar.unrn.tp.api.redis;
+package ar.unrn.tp.redis;
 
 public interface CacheService {
     void store(String key, String value);

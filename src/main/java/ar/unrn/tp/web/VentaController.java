@@ -2,7 +2,7 @@ package ar.unrn.tp.web;
 
 import ar.unrn.tp.api.VentaService;
 import ar.unrn.tp.modelo.Venta;
-import ar.unrn.tp.web.dto.VentaDto;
+import ar.unrn.tp.web.dto.request.VentaRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static ar.unrn.tp.web.message.ResponseMessages.VENTA_REGISTRADA;
 
 @CrossOrigin
 @AllArgsConstructor
@@ -28,20 +30,14 @@ public class VentaController {
     }
 
     @PostMapping
-    public ResponseEntity<String> crearVenta(@NotNull Long idCliente, @RequestParam(name = "productos") List<Long> productos, @NotNull Long idTarjeta) {
-        ventaService.realizarVenta(idCliente, productos, idTarjeta);
-
-        return new ResponseEntity<>("Venta registrada con exito!", HttpStatus.OK);
+    public ResponseEntity<String> crearVenta(@RequestBody VentaRequest request) {
+        ventaService.realizarVenta(request.getIdCliente(), request.getProductos(), request.getIdTarjeta());
+        return new ResponseEntity<>(VENTA_REGISTRADA, HttpStatus.OK);
     }
 
     @GetMapping({"/idCliente"})
-    public ResponseEntity<List<VentaDto>> misCompras(@NotNull @RequestParam Long idCliente) throws JsonProcessingException {
+    public ResponseEntity<List<Venta>> misCompras(@NotNull @RequestParam Long idCliente) {
         List<Venta> result = ventaService.misCompras(idCliente);
-
-        List<VentaDto> response = result.stream()
-                .map(VentaDto::fromDomain)
-                .toList();
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

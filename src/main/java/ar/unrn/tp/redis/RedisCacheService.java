@@ -1,7 +1,5 @@
-package ar.unrn.tp.redis_cache;
+package ar.unrn.tp.redis;
 
-import ar.unrn.tp.api.redis.CacheService;
-import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

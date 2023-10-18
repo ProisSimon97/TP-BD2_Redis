@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 @Service
 public class DescuentoServiceJPA implements DescuentoService {
 
-    private EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
 
     public DescuentoServiceJPA(EntityManagerFactory emf) {
         this.emf = emf;

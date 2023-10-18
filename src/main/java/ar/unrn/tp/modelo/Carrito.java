@@ -3,7 +3,7 @@ package ar.unrn.tp.modelo;
 import ar.unrn.tp.modelo.promocion.PromocionProducto;
 import ar.unrn.tp.modelo.promocion.PromocionCompra;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +62,7 @@ public class Carrito {
         try {
             tarjeta.realizarPago(totalCompra);
 
-            Venta venta = new Venta(LocalDate.now(), this.cliente, productoVendidos, totalCompra);
+            Venta venta = new Venta(LocalDateTime.now(), this.cliente, productoVendidos, totalCompra);
             venta.numeroUnico(nextNumber);
 
             return venta;

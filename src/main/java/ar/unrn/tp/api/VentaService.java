@@ -18,7 +18,7 @@ public interface VentaService {
     float calcularMonto(List<Long> productos, Long idTarjeta);
 
     //Devuelve todas las ventas realizadas
-    List ventas();
+    List<Venta> ventas();
 
-    List<Venta> misCompras(Long idCliente) throws JsonProcessingException;
+    List<Venta> misCompras(Long idCliente);
 }

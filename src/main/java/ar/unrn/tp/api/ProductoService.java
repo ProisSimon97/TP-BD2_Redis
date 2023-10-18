@@ -12,7 +12,7 @@ public interface ProductoService {
     void modificarProducto(Long idProducto, String codigo, String descripcion, double precio, Long idCategoria, Long version, String marca);
 
     //Devuelve todos los productos
-    List listarProductos();
+    List<Producto> listarProductos();
 
     Producto obtener(Long id);
 }

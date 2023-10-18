@@ -89,7 +89,7 @@ public class ProductoServiceTest {
     public void Should_BeTrue_When_ProductListIsNotEmpty() {
        inTransactionExecute(
                 (em) -> {
-                    List<Tarjeta> productos = productoService.listarProductos();
+                    List<Producto> productos = productoService.listarProductos();
                     Assertions.assertTrue(!productos.isEmpty());
                 }
         );

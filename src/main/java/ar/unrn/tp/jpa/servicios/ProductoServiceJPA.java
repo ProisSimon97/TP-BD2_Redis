@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 @Service
 public class ProductoServiceJPA implements ProductoService {
 
-    private EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
 
     public ProductoServiceJPA(EntityManagerFactory emf) {
         this.emf = emf;
@@ -57,7 +57,7 @@ public class ProductoServiceJPA implements ProductoService {
     }
 
     @Override
-    public List listarProductos() {
+    public List<Producto> listarProductos() {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 

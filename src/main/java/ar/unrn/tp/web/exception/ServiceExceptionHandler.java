@@ -11,15 +11,6 @@ import java.util.Map;
 
 @ControllerAdvice
 public class ServiceExceptionHandler {
-
-    @ExceptionHandler(JsonProcessingException.class)
-    public ResponseEntity<Map<String, String>> handleJsonProcessingException(JsonProcessingException exception) {
-        Map<String, String> response = new HashMap<>();
-        response.put("error", "Error en la deserialización JSON: " + exception.getMessage());
-        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-
-
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<Map<String, String>> handleException(RuntimeException exception) {
 

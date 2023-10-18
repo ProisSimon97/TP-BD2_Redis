@@ -37,8 +37,6 @@ public class JedisCacheConfig {
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         poolConfig.setMaxTotal(redisMaximumActiveConnectionCount);
 
-        JedisPool pool = new JedisPool(poolConfig, redisHost, redisPort, redisTimeout, redisUser, redisPassword);
-
-        return pool;
+        return new JedisPool(poolConfig, redisHost, redisPort, redisTimeout, redisUser, redisPassword);
     }
 }

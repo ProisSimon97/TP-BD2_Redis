@@ -3,6 +3,7 @@ package ar.unrn.tp.web;
 import ar.unrn.tp.api.ProductoService;
 import ar.unrn.tp.web.dto.ProductoDto;
 import ar.unrn.tp.modelo.Producto;
+import ar.unrn.tp.web.dto.request.ProductoRequest;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static ar.unrn.tp.web.message.ResponseMessages.PRODUCTO_MODIFICADO;
 
 @CrossOrigin
 @AllArgsConstructor
@@ -31,13 +34,14 @@ public class ProductoController {
     }
 
     @PutMapping
-    public ResponseEntity<String> update(@NotNull Long idProducto, String codigo, String descripcion, double precio, Long idCategoria, Long version, String marca) {
-        productoService.modificarProducto(idProducto, codigo, descripcion, precio, idCategoria, version, marca);
-        return new ResponseEntity<>("Producto modificado con exito!", HttpStatus.OK);
+    public ResponseEntity<String> update(@RequestBody ProductoRequest request) {
+        productoService.modificarProducto(request.getId(), request.getCodigo(), request.getDescripcion(), request.getPrecio(),
+                request.getIdCategoria(), request.getVersion(), request.getMarca());
+        return new ResponseEntity<>(PRODUCTO_MODIFICADO, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductoDto> find(Long id) {
+    public ResponseEntity<ProductoDto> find(@PathVariable Long id) {
         Producto producto = productoService.obtener(id);
         ProductoDto response = ProductoDto.fromDomain(producto);
 

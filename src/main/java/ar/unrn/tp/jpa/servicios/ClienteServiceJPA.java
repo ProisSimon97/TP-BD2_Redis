@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 
 @Service
 public class ClienteServiceJPA implements ClienteService {
-    private EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
 
     public ClienteServiceJPA(EntityManagerFactory emf) {
         this.emf = emf;
@@ -66,7 +66,7 @@ public class ClienteServiceJPA implements ClienteService {
     }
 
     @Override
-    public List listarTarjetas(Long idCliente) {
+    public List<Tarjeta> listarTarjetas(Long idCliente) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
