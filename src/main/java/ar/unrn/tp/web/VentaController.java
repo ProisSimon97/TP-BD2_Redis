@@ -1,9 +1,8 @@
 package ar.unrn.tp.web;
 
 import ar.unrn.tp.api.VentaService;
-import ar.unrn.tp.modelo.Venta;
+import ar.unrn.tp.modelo.VentaSimple;
 import ar.unrn.tp.web.dto.request.VentaRequest;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -36,8 +35,8 @@ public class VentaController {
     }
 
     @GetMapping({"/idCliente"})
-    public ResponseEntity<List<Venta>> misCompras(@NotNull @RequestParam Long idCliente) {
-        List<Venta> result = ventaService.misCompras(idCliente);
+    public ResponseEntity<List<VentaSimple>> misCompras(@NotNull @RequestParam Long idCliente) {
+        List<VentaSimple> result = ventaService.misCompras(idCliente);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

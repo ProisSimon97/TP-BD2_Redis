@@ -144,15 +144,15 @@ public class VentaServiceJPA implements VentaService {
     }
 
     @Override
-    public List<Venta> misCompras(Long idCliente) {
+    public List<VentaSimple> misCompras(Long idCliente) {
         String key = "venta:" + idCliente;
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
         String json = cacheService.retrieve(key);
-        List<Venta> ventas;
+        List<VentaSimple> ventas;
 
         try {
             if (json != null) {
-                ventas = mapper.readValue(json, new TypeReference<List<Venta>>() {});
+                ventas = mapper.readValue(json, new TypeReference<List<VentaSimple>>() {});
             } else {
                 EntityManager em = emf.createEntityManager();
 
@@ -164,11 +164,13 @@ public class VentaServiceJPA implements VentaService {
                     query.setParameter("idCliente", idCliente);
                     query.setMaxResults(3);
 
-                    ventas = query.getResultList();
+                    List<Venta> ventasCompletas = query.getResultList();
 
+                    ventas = ventasCompletas.stream()
+                            .map(VentaSimple::mapTo)
+                            .toList();
 
-                    String ventasJson = mapper.writeValueAsString(ventas);
-                    cacheService.store(key, ventasJson);
+                    cacheService.store(key, mapper.writeValueAsString(ventas));
 
                 } catch (Exception e) {
                     throw new RuntimeException(e);

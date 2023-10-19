@@ -4,7 +4,6 @@ import ar.unrn.tp.api.ProductoService;
 import ar.unrn.tp.web.dto.ProductoDto;
 import ar.unrn.tp.modelo.Producto;
 import ar.unrn.tp.web.dto.request.ProductoRequest;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

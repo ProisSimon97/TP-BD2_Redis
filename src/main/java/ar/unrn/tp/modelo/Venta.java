@@ -1,7 +1,6 @@
 package ar.unrn.tp.modelo;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -21,7 +20,8 @@ public class Venta {
     @Column(name = "numero_unico", unique = true)
     private String numeroUnico;
 
-    protected Venta() { }
+    protected Venta() {
+    }
 
     public Venta(LocalDateTime fechaHora, Cliente cliente, List<ProductoVendido> productosComprados, double montoTotal) {
         this.fecha = fechaHora;

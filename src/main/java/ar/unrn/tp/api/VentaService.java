@@ -1,7 +1,7 @@
 package ar.unrn.tp.api;
 
 import ar.unrn.tp.modelo.Venta;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import ar.unrn.tp.modelo.VentaSimple;
 
 import java.util.List;
 
@@ -20,5 +20,5 @@ public interface VentaService {
     //Devuelve todas las ventas realizadas
     List<Venta> ventas();
 
-    List<Venta> misCompras(Long idCliente);
+    List<VentaSimple> misCompras(Long idCliente);
 }
