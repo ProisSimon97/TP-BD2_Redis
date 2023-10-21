@@ -34,7 +34,7 @@ public class VentaController {
         return new ResponseEntity<>(VENTA_REGISTRADA, HttpStatus.OK);
     }
 
-    @GetMapping({"/idCliente"})
+    @GetMapping({"/mis-compras"})
     public ResponseEntity<List<VentaSimple>> misCompras(@NotNull @RequestParam Long idCliente) {
         List<VentaSimple> result = ventaService.misCompras(idCliente);
         return new ResponseEntity<>(result, HttpStatus.OK);
