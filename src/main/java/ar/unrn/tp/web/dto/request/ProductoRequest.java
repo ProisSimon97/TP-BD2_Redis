@@ -10,7 +10,7 @@ public class ProductoRequest {
     private String codigo;
     private String descripcion;
     private double precio;
-    private Long idCategoria;
+    private Long categoria;
     private Long version;
     private String marca;
 }

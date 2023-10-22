@@ -35,7 +35,7 @@ public class ProductoController {
     @PutMapping
     public ResponseEntity<String> update(@RequestBody ProductoRequest request) {
         productoService.modificarProducto(request.getId(), request.getCodigo(), request.getDescripcion(), request.getPrecio(),
-                request.getIdCategoria(), request.getVersion(), request.getMarca());
+                request.getCategoria(), request.getVersion(), request.getMarca());
         return new ResponseEntity<>(PRODUCTO_MODIFICADO, HttpStatus.OK);
     }
 
